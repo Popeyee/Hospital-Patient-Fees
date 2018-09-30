@@ -9,7 +9,29 @@
 #include <iostream>
 using namespace std;
 
+class PatientAccount{
+private:
+    double total;
+    int numOfDays;
+
+public:
+    double dailyRate;
+    
+    //Methods
+    double getTotal();
+    int getNumOfDays();
+};
+
+double PatientAccount::getTotal(){
+    return this->total;
+}
+
+int PatientAccount::getNumOfDays(){
+    return this->numOfDays;
+}
+
 int main() {
+
     cout << "\n Please enter your surgery type: "  << endl;
     cout << " Surgery 1 "<< endl;
     cout << " Surgery 2 "<< endl;
@@ -18,12 +40,12 @@ int main() {
     cout << " Surgery 5 "<< endl;
     cout << endl;
     cout << "\n Please enter your medication type: "  << endl;
-    cout << " Surgery 1 "<< endl;
-    cout << " Surgery 2 "<< endl;
-    cout << " Surgery 3 "<< endl;
-    cout << " Surgery 4 "<< endl;
-    cout << " Surgery 5 "<< endl;
+    cout << " Medication 1 "<< endl;
+    cout << " Medication 2 "<< endl;
+    cout << " Medication 3 "<< endl;
+    cout << " Medication 4 "<< endl;
+    cout << " Medication 5 "<< endl;
     
-    
-        return 0;
+
+    return 0;
 }
