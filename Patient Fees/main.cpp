@@ -56,6 +56,10 @@ double Surgeries::getPrice(){
     return this->price;
 }
 
+class Pharmacy{
+    
+};
+
 int main() {
     
     Surgeries s1("abc" , 234);
