@@ -37,10 +37,47 @@ private:
     
 public:
     Surgeries(string, double);
+    
+    //Methods
+    string getName();
+    double getPrice();
 };
 
 Surgeries::Surgeries(string n, double p){
+    this->name = n;
+    this->price = p;
+}
+
+string Surgeries::getName(){
+    return this->name;
+}
+
+double Surgeries::getPrice(){
+    return this->price;
+}
+
+class Pharmacy{
+private:
+    string name;
+    double price;
     
+public:
+    Pharmacy(string, double);
+    string getName();
+    double getPrice();
+};
+
+Pharmacy::Pharmacy(string n, double p){
+    this->name = n;
+    this->price = p;
+}
+
+string Pharmacy::getName(){
+    return this->name;
+}
+
+double Pharmacy::getPrice(){
+    return this->price;
 }
 // --------------- prototypes-----------------
 void displaySmenu(){
@@ -95,7 +132,7 @@ int main() {
     Surgeries s5("Surgery 5" , 5000);
 
     
-    Surgeries *surgeries[5] = {&s1};
+    Surgeries *surgeries[5] = {&s1, &s2, &s3, &s4, &s5};
 
     displaySmenu();
     getSinput();
