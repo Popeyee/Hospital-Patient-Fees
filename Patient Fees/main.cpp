@@ -10,6 +10,6 @@
 using namespace std;
 
 int main() {
-    
+    cout << "enter your selec"
     return 0;
 }
