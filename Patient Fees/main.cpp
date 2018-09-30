@@ -8,7 +8,7 @@
 
 #include <iostream>
 using namespace std;
-
+//------------Patien acc CLASS------------
 class PatientAccount{
 private:
     double total;
@@ -29,11 +29,7 @@ double PatientAccount::getTotal(){
 int PatientAccount::getNumOfDays(){
     return this->numOfDays;
 }
-
-
-
-
-
+//------------Surgeries CLASS------------
 
 class Surgeries{
 private:
@@ -60,14 +56,7 @@ string Surgeries::getName(){
 double Surgeries::getPrice(){
     return this->price;
 }
-
-
-
-
-
-
-
-
+//------------Pharmacy CLASS------------
 class Pharmacy{
 private:
     string name;
@@ -96,11 +85,9 @@ double Pharmacy::getPrice(){
 void displaySmenu(Surgeries ** surgeries){
 
     cout << "\n Please enter your surgery type: "  << endl;
-    cout << " " << (*(surgeries + 0))->getName() << endl;
-    cout << " Surgery 2 "<< endl;
-    cout << " Surgery 3 "<< endl;
-    cout << " Surgery 4 "<< endl;
-    cout << " Surgery 5 "<< endl;
+    for (int i = 0 ; i < 5 ; i++){
+    cout << " " << (*(surgeries + i))->getName() << endl;
+    }
     }
 
 int getSinput () {
@@ -115,14 +102,12 @@ int getSinput () {
     return stype;
 }
 
-    void displayMmenu() {
+void displayMmenu(Pharmacy ** medication) {
     cout << " Please enter your medication type: "  << endl;
-    cout << " Medication 1 "<< endl;
-    cout << " Medication 2 "<< endl;
-    cout << " Medication 3 "<< endl;
-    cout << " Medication 4 "<< endl;
-    cout << " Medication 5 "<< endl;
-}
+        for (int j = 0 ; j < 5 ; j++){
+    cout << " " << (*(medication + j))->getName() << endl;
+        }
+        }
 
 int getMinput() {
     int mtype;
