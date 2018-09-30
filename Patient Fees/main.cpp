@@ -42,29 +42,48 @@ public:
 Surgeries::Surgeries(string n, double p){
     
 }
-
-void Displaymenu(){
+// --------------- prototypes-----------------
+void displaySmenu(){
     cout << "\n Please enter your surgery type: "  << endl;
     cout << " Surgery 1 "<< endl;
     cout << " Surgery 2 "<< endl;
     cout << " Surgery 3 "<< endl;
     cout << " Surgery 4 "<< endl;
     cout << " Surgery 5 "<< endl;
-    int stype, mtype;
+    }
+
+int getSinput () {
+    int stype;
     
     cin >> stype;
     
     while (stype < 1 || stype > 5){
         cout << " Please enter a number from the selection above"<< endl;
+        cin >> stype;
     }
-    
-    cout << "\n Please enter your medication type: "  << endl;
+    return stype;
+}
+
+    void displayMmenu() {
+    cout << " Please enter your medication type: "  << endl;
     cout << " Medication 1 "<< endl;
     cout << " Medication 2 "<< endl;
     cout << " Medication 3 "<< endl;
     cout << " Medication 4 "<< endl;
     cout << " Medication 5 "<< endl;
+}
+
+int getMinput() {
+    int mtype;
+    
     cin >> mtype;
+    
+    while (mtype < 1 || mtype > 5){
+        cout << " Please enter a number from the selection above"<< endl;
+        cin >> mtype;
+    }
+    return mtype;
+    
 }
 
 int main() {
@@ -78,7 +97,10 @@ int main() {
     
     Surgeries *surgeries[5] = {&s1};
 
-    Displaymenu();
+    displaySmenu();
+    getSinput();
+    displayMmenu();
+    getMinput();
 
     return 0;
 }
