@@ -38,6 +38,7 @@ int main() {
     cout << " Surgery 3 "<< endl;
     cout << " Surgery 4 "<< endl;
     cout << " Surgery 5 "<< endl;
+    cin >> stype;
     cout << endl;
     cout << "\n Please enter your medication type: "  << endl;
     cout << " Medication 1 "<< endl;
