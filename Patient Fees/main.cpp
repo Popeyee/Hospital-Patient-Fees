@@ -30,6 +30,11 @@ int PatientAccount::getNumOfDays(){
     return this->numOfDays;
 }
 
+
+
+
+
+
 class Surgeries{
 private:
     string name;
@@ -56,6 +61,13 @@ double Surgeries::getPrice(){
     return this->price;
 }
 
+
+
+
+
+
+
+
 class Pharmacy{
 private:
     string name;
@@ -79,6 +91,10 @@ string Pharmacy::getName(){
 double Pharmacy::getPrice(){
     return this->price;
 }
+
+
+
+
 
 void Displaymenu(){
     cout << "\n Please enter your surgery type: "  << endl;
