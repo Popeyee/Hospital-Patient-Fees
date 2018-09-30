@@ -20,9 +20,14 @@ public:
     //Methods
     double getTotal();
     int getNumOfDays();
+    double getCharger();
     
     void addCharge(double);
 };
+
+double PatientAccount::getCharger(){
+    return this->charge;
+}
 
 double PatientAccount::getTotal(){
     return (this->numOfDays * this->dailyRate) + this->charge;
@@ -116,7 +121,7 @@ void displayMmenu(Pharmacy ** medications) {
         for (int j = 0 ; j < 5 ; j++){
     cout << " " << (*(medications + j))->getName() << endl;
         }
-        }
+    }
 
 int getMinput() {
     int mtype;
@@ -133,26 +138,32 @@ int getMinput() {
 
 int main() {
     
-    Surgeries s1("Surgery 1" , 1000);
-    Surgeries s2("Surgery 2" , 2000);
-    Surgeries s3("Surgery 3" , 3000);
-    Surgeries s4("Surgery 4" , 4000);
-    Surgeries s5("Surgery 5" , 5000);
+    PatientAccount p;
+    
+    Surgeries s1("Surgery 0" , 1000);
+    Surgeries s2("Surgery 1" , 2000);
+    Surgeries s3("Surgery 2" , 3000);
+    Surgeries s4("Surgery 3" , 4000);
+    Surgeries s5("Surgery 4" , 5000);
 
     
     Surgeries *surgeries[5] = {&s1, &s2, &s3, &s4, &s5};
     
-    Pharmacy p1("Medication 1", 75);
-    Pharmacy p2("Medication 2", 100);
-    Pharmacy p3("Medication 3", 90);
-    Pharmacy p4("Medication 4", 110);
-    Pharmacy p5("Medication 5", 65);
+    Pharmacy p1("Medication 0", 75);
+    Pharmacy p2("Medication 1", 100);
+    Pharmacy p3("Medication 2", 90);
+    Pharmacy p4("Medication 3", 110);
+    Pharmacy p5("Medication 4", 65);
 
     
     Pharmacy *medications[5] = {&p1, &p2, &p3, &p4, &p5};
 
     displaySmenu(surgeries);
-    getSinput();
+    
+    int surgeryNum = getSinput();
+    p.addCharge( (*(surgeries + surgeryNum))->getPrice() );
+    cout << p.getCharger() << endl;
+    
     displayMmenu(medications);
     getMinput();
 
