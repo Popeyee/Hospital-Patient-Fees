@@ -37,10 +37,23 @@ private:
     
 public:
     Surgeries(string, double);
+    
+    //Methods
+    string getName();
+    double getPrice();
 };
 
 Surgeries::Surgeries(string n, double p){
-    
+    this->name = n;
+    this->price = p;
+}
+
+string Surgeries::getName(){
+    return this->name;
+}
+
+double Surgeries::getPrice(){
+    return this->price;
 }
 
 int main() {
