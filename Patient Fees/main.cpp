@@ -30,7 +30,24 @@ int PatientAccount::getNumOfDays(){
     return this->numOfDays;
 }
 
+class Surgeries{
+private:
+    string name;
+    double price;
+    
+public:
+    Surgeries(string, double);
+};
+
+Surgeries::Surgeries(string n, double p){
+    
+}
+
 int main() {
+    
+    Surgeries s1("abc" , 234);
+    
+    Surgeries *surgiers[5] = {&s1};
 
     cout << "\n Please enter your surgery type: "  << endl;
     cout << " Surgery 1 "<< endl;
