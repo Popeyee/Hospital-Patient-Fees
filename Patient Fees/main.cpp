@@ -17,7 +17,7 @@ private:
 public:
     double dailyRate = 500.00;
     
-    //Methods
+//---------------Methods-------------------
     double getTotal();
     int getNumOfDays();
     
@@ -32,13 +32,11 @@ int PatientAccount::getNumOfDays(){
     return this->numOfDays;
 }
 
-//------------Surgeries CLASS------------
-
 void PatientAccount::addCharge(double c){
     this->charge += c;
 }
 
-
+//------------Surgeries CLASS------------
 
 class Surgeries{
 private:
@@ -90,7 +88,7 @@ double Pharmacy::getPrice(){
     return this->price;
 }
 
-// --------------- prototypes-----------------
+// --------------- DISPLAY -----------------
 void displaySmenu(Surgeries ** surgeries){
 
     cout << "\n Please enter your surgery type: "  << endl;
@@ -98,6 +96,14 @@ void displaySmenu(Surgeries ** surgeries){
     cout << " " << (*(surgeries + i))->getName() << endl;
     }
     }
+
+void displayMmenu(Pharmacy ** medications) {
+    cout << " Please enter your medication type: "  << endl;
+    for (int j = 0 ; j < 5 ; j++){
+        cout << " " << (*(medications + j))->getName() << endl;
+    }
+}
+// --------------- GET INPUT -----------------
 
 int getSinput () {
     int stype;
@@ -110,13 +116,6 @@ int getSinput () {
     }
     return stype;
 }
-
-void displayMmenu(Pharmacy ** medications) {
-    cout << " Please enter your medication type: "  << endl;
-        for (int j = 0 ; j < 5 ; j++){
-    cout << " " << (*(medications + j))->getName() << endl;
-        }
-        }
 
 int getMinput() {
     int mtype;
