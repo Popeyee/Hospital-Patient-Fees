@@ -10,6 +10,20 @@
 using namespace std;
 
 int main() {
-    cout << "enter your selec"
-    return 0;
+    cout << "\n Please enter your surgery type: "  << endl;
+    cout << " Surgery 1 "<< endl;
+    cout << " Surgery 2 "<< endl;
+    cout << " Surgery 3 "<< endl;
+    cout << " Surgery 4 "<< endl;
+    cout << " Surgery 5 "<< endl;
+    cout << endl;
+    cout << "\n Please enter your medication type: "  << endl;
+    cout << " Surgery 1 "<< endl;
+    cout << " Surgery 2 "<< endl;
+    cout << " Surgery 3 "<< endl;
+    cout << " Surgery 4 "<< endl;
+    cout << " Surgery 5 "<< endl;
+    
+    
+        return 0;
 }
