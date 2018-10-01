@@ -8,7 +8,7 @@
 
 #include <iostream>
 using namespace std;
-//------------Patien acc CLASS------------
+//------------  PATIENT ACC CLASS------------
 class PatientAccount{
 private:
     double charge;
@@ -16,13 +16,17 @@ private:
 
 public:
     double dailyRate = 500.00;
-    
 //---------------Methods-------------------
     double getTotal();
     int getNumOfDays();
+    double getCharger();
     
     void addCharge(double);
 };
+
+double PatientAccount::getCharger(){
+    return this->charge;
+}
 
 double PatientAccount::getTotal(){
     return (this->numOfDays * this->dailyRate) + this->charge;
@@ -92,14 +96,14 @@ double Pharmacy::getPrice(){
 void displaySmenu(Surgeries ** surgeries){
 
     cout << "\n Please enter your surgery type: "  << endl;
-    for (int i = 0 ; i < 5 ; i++){
+    for (int i = 0 ; i < 6 ; i++){
     cout << " " << (*(surgeries + i))->getName() << endl;
     }
     }
 
 void displayMmenu(Pharmacy ** medications) {
     cout << " Please enter your medication type: "  << endl;
-    for (int j = 0 ; j < 5 ; j++){
+    for (int j = 0 ; j < 6 ; j++){
         cout << " " << (*(medications + j))->getName() << endl;
     }
 }
@@ -129,8 +133,10 @@ int getMinput() {
     return mtype;
     
 }
-
+// ---------------------- MAIN ------------------------
 int main() {
+    
+    PatientAccount p;
     
     Surgeries s1("Surgery 1" , 1000);
     Surgeries s2("Surgery 2" , 2000);
@@ -151,7 +157,11 @@ int main() {
     Pharmacy *medications[5] = {&p1, &p2, &p3, &p4, &p5};
 
     displaySmenu(surgeries);
-    getSinput();
+    
+    int surgeryNum = getSinput();
+    p.addCharge( (*(surgeries + surgeryNum))->getPrice() );
+    cout << p.getCharger() << endl;
+    
     displayMmenu(medications);
     getMinput();
 
